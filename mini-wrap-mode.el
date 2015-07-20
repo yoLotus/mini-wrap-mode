@@ -3,7 +3,8 @@
 ;; 07/20/2015: init commit
 ;;
 ;; TODO:
-;; add history to wrap-word used
+;; * add history to wrap-word used
+;; * make mini-wrap-special-word customable and document it
 
 (defvar mini-wrap-special-word (make-hash-table :test 'equal))
 (puthash "(" ")" mini-wrap-special-word)
