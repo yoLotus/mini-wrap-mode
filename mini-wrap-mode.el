@@ -11,8 +11,9 @@
 (puthash "<" ">" mini-wrap-special-word)
 (puthash "/*" "*/" mini-wrap-special-word)
 
-(defun mini-wrap-word-or-region (wrap-symb)
-  " wrap a word with WRAP-SYMB"
+(defun mini-wrap-word-or-region (wrap-symb &optional force)
+  " wrap a word with WRAP-SYMB, do not check if wrap-symb is a
+special word if force is t"
   (interactive
    (list (read-string "wrap symbol ?: ")))
   (save-excursion
@@ -36,7 +37,7 @@
       (insert wrap-symb)
       (exchange-point-and-mark)
       (let ((special-warp-word (gethash wrap-symb mini-wrap-special-word nil)) )
-        (if special-warp-word
+        (if (and (not force) special-warp-word)
             (insert special-warp-word)
           (insert wrap-symb))))))
 
