@@ -1,6 +1,6 @@
 ;;; mini-wrap-mode.el --- define the minor mode mini-wrap-mode
 ;;
-;; 07/20/2015: init commit
+;; 07/20/2015: init commit, add force mode
 ;;
 ;; TODO:
 ;; * add history to wrap-word used
